@@ -1,13 +1,24 @@
 <html>
   <head>
-<link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
-<script defer src="https://pyscript.net/latest/pyscript.js"></script>
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+    <py-env>
+    - paths:
+      - ./utils.py
+    </py-env>
   </head>
   <body>
+   <p><textarea id="input1" name="inputstr" cols="40" rows="6"></textarea></p>
+   <div id="outputDiv2" class="font-mono"></div>
    <py-script>
-from datetime import datetime
-now = datetime.now()
-now.strftime("%m/%d/%Y, %H:%M:%S")
+from utils import now
+import asyncio
+
+async def foo():
+  while True:
+    await asyncio.sleep(5)
+    output = Element("input1")
+    Element("outputDiv2").write(output[:-1])
     </py-script>
   </body>
 </html>
