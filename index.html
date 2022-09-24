@@ -17,8 +17,8 @@ import asyncio
 async def foo():
   while True:
     await asyncio.sleep(5)
-    output = Element("input1")
-    Element("outputDiv2").write(output[:-1])
+    output = Element("input1") + ":1"
+    Element("outputDiv2").write(output)
     </py-script>
   </body>
 </html>
