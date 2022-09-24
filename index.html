@@ -16,8 +16,8 @@ import asyncio
 
 async def foo():
   while True:
-    await asyncio.sleep(5)
-    output = Element("input1") + ":1"
+    await asyncio.sleep(2)
+    output = now()
     Element("outputDiv2").write(output)
 
 pyscript_loader.close()
