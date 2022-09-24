@@ -18,7 +18,7 @@ async def foo():
   while True:
     await asyncio.sleep(2)
     output = now()
-    Element("outputDiv2").write(output)
+    Element("input1").write(output)
 
 pyscript_loader.close()
 pyscript.run_until_complete(foo())
