@@ -18,8 +18,8 @@ async def foo():
   while True:
     await asyncio.sleep(2)
     output = now()
-    Element("input1").write(output)
-    Element("outputDiv2").write(Element("input1"))
+    Element("input1").element.innerText = output
+    Element("outputDiv2").write(Element("input1").element.value)
 
 pyscript_loader.close()
 pyscript.run_until_complete(foo())
